@@ -1,0 +1,14 @@
+{
+  "name": "front-assessment-e2e",
+  "version": "1.0.0",
+  "description": "run cypress against anything",
+  "scripts": {
+    "cypress": "cypress open",
+    "cypress-debug": "cypress open --config watchForFileChanges=true",
+    "cy:verify": "cypress verify"
+  },
+  "devDependencies": {
+    "cypress": "^9.3.1",
+    "eslint-plugin-cypress": "^2.11.1"
+  }
+}
