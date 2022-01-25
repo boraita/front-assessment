@@ -43,3 +43,6 @@ Thumbs.db
 
 # e2e
 /e2e/node_modules
+
+# api
+/api/node_modules
