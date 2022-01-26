@@ -1,0 +1,11 @@
+.list-item {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-around;
+  border: 1px solid #ccc;
+}
+.list-item > div {
+  width: 300px;
+  font-weight: bold;
+}

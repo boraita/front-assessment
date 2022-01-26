@@ -1,4 +1,4 @@
 export type Country = {
     country: string;
-    city: string;
+    city: string | null;
 }
