@@ -1,0 +1,8 @@
+.main {
+  margin-top: 100px;
+  display: flex;
+  flex-flow: wrap;
+}
+.main > * {
+  flex: 0 0 50%;
+}

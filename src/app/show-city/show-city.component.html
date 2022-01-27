@@ -1,0 +1,6 @@
+<div class="select-city" *ngIf="country == undefined; else capital">
+  Select a city
+</div>
+<ng-template #capital>
+  <div class="capital-selected">Country selected: {{country.country}} - Capital: {{ country?.city || "Unknown" }}</div>
+</ng-template>

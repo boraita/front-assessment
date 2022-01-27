@@ -1,1 +1,4 @@
-<app-country-list></app-country-list>
+<div class="main">
+  <app-country-list (countrySelected)="country = $event"></app-country-list>
+  <app-show-city [country]="country"></app-show-city>
+</div>

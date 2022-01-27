@@ -1,4 +1,4 @@
+<span class="title">Country List</span>
 <div class="list-item" *ngFor="let item of countryList">
-  <div>Country: {{ item.country }}</div>
-  <div>Capital city: {{ item.city || 'Unknown' }}</div>
+  <a class='btn' (click)="setCountry(item)">{{ item.country }}</a>
 </div>
