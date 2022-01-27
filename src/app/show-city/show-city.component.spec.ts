@@ -26,8 +26,8 @@ describe('ShowCityComponent', () => {
 
   it('country should be undefined', () => {
     expect(component.country).toBeUndefined();
-    const divSelectCity = fixture.debugElement.query(By.css('.select-city'));
-    expect(divSelectCity.nativeElement.textContent.trim()).toBe('Select a city');
+    const divSelectCity = fixture.debugElement.query(By.css('.select-country'));
+    expect(divSelectCity.nativeElement.textContent.trim()).toBe('Select a country');
   });
 
   it('should be shown capital Unknown', () => {
@@ -43,5 +43,16 @@ describe('ShowCityComponent', () => {
     const divSelectedCountry = fixture.debugElement.query(By.css('.city-name'));
     expect(divSelectedCountry.nativeElement.textContent.trim()).toBe('Capital  Madrid');
   });
+
+  it('should display Select a country', () => {
+    expect(fixture).toMatchSnapshot();
+  });
+  
+  it('should display a capital from input country value', () => {
+    component.country = { city: 'Madrid', country: 'Spain' } as Country;
+    fixture.detectChanges();
+    expect(fixture).toMatchSnapshot();
+  });
+
 
 });

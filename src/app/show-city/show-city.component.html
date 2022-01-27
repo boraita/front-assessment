@@ -1,7 +1,7 @@
 <div class="container">
   <div class="capital-container">
-    <div class="select-city" *ngIf="country == undefined; else capital">
-      Select a city
+    <div class="select-country" *ngIf="country == undefined; else capital">
+      Select a country
     </div>
     <ng-template #capital>
       <div class="capital-selected">

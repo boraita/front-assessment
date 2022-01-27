@@ -1,8 +1,9 @@
 import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { Subscription } from 'rxjs';
+import { Country } from '../models/country';
 import { CountryService } from '../services/country.service';
 import { CountryServiceMock } from '../shared/mocks/country-service.mock';
 import { CountryListComponent } from './country-list.component';
-import { Country } from '../models/country';
 
 describe('CountryListComponent', () => {
   let component: CountryListComponent;
@@ -35,11 +36,27 @@ describe('CountryListComponent', () => {
   }));
 
   it('should emit a country', () => {
-    const countrySelectedEmit = jest.spyOn(fixture.componentInstance.countrySelected, 'emit');
-    fixture.componentInstance.countrySelected.emit({ city: 'Madrid', country: 'Spain' } as Country);
+    const countrySelectedEmit = jest.spyOn(
+      fixture.componentInstance.countrySelected,
+      'emit'
+    );
+    fixture.componentInstance.countrySelected.emit({
+      city: 'Madrid',
+      country: 'Spain',
+    } as Country);
     fixture.detectChanges();
 
     expect(countrySelectedEmit).toHaveBeenCalledTimes(1);
-    expect(component.countrySelected.emit).toHaveBeenCalledWith({ city: 'Madrid', country: 'Spain' });
+    expect(component.countrySelected.emit).toHaveBeenCalledWith({
+      city: 'Madrid',
+      country: 'Spain',
+    });
+  });
+
+  it('unsubscribes when destoryed', () => {
+    component.subscriptions = new Subscription();
+    const subscriptionSpy = jest.spyOn(component.subscriptions, 'unsubscribe');
+    component.ngOnDestroy();
+    expect(subscriptionSpy).toHaveBeenCalledTimes(1);
   });
 });
