@@ -33,15 +33,15 @@ describe('ShowCityComponent', () => {
   it('should be shown capital Unknown', () => {
     component.country = { city: null, country: 'Spain' } as Country;
     fixture.detectChanges();
-    const divSelectedCountry = fixture.debugElement.query(By.css('.capital-selected'));
-    expect(divSelectedCountry.nativeElement.textContent.trim()).toBe('Country selected: Spain - Capital: Unknown');
+    const divSelectedCountry = fixture.debugElement.query(By.css('.city-name'));
+    expect(divSelectedCountry.nativeElement.textContent.trim()).toBe('Capital  Unknown');
   });
 
   it('should be shown capital from country selected', () => {
     component.country = { city: 'Madrid', country: 'Spain' } as Country;
     fixture.detectChanges();
-    const divSelectedCountry = fixture.debugElement.query(By.css('.capital-selected'));
-    expect(divSelectedCountry.nativeElement.textContent.trim()).toBe('Country selected: Spain - Capital: Madrid');
+    const divSelectedCountry = fixture.debugElement.query(By.css('.city-name'));
+    expect(divSelectedCountry.nativeElement.textContent.trim()).toBe('Capital  Madrid');
   });
 
 });

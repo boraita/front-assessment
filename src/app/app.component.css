@@ -1,8 +1,29 @@
 .main {
-  margin-top: 100px;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   flex-flow: wrap;
+  overflow: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: auto;
+  width: 80vw;
 }
 .main > * {
-  flex: 0 0 50%;
+  flex: 0 0 48%;
+}
+.country-list {
+  overflow: auto;
+  max-height: calc(100vh - 20px);
+}
+
+@media only screen and (max-width: 1028px) {
+  .main {
+    width: 100vw;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+  .country-list {
+    margin-top: 20px;
+  }
 }
