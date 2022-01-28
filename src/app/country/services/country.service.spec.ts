@@ -3,8 +3,8 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { environment } from './../../environments/environment';
-import { countriesCity } from '../shared/mocks/country-by-capital-city';
+import { environment } from '../../../environments/environment';
+import { countriesCity } from '../../shared/mocks/country-by-capital-city';
 import { CountryService } from './country.service';
 
 describe('CountryService', () => {
@@ -14,6 +14,7 @@ describe('CountryService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
+      providers: [CountryService]
     });
     service = TestBed.inject(CountryService);
     httpMock = TestBed.inject(HttpTestingController);

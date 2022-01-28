@@ -35,15 +35,6 @@
   border-color: grey;
   border-radius: 5px;
 }
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  padding: 20px;
-  font-weight: bold;
-  font-size: large;
-  background-color: beige;
-}
 .capital-container {
   min-width: 20vw;
   left: 50%;

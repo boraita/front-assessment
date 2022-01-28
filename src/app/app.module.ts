@@ -1,14 +1,20 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { CountryListComponent } from './country-list/country-list.component';
-import { ShowCityComponent } from './show-city/show-city.component';
 
 @NgModule({
-  declarations: [AppComponent, CountryListComponent, ShowCityComponent],
-  imports: [BrowserModule, HttpClientModule],
-  providers: [],
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        loadChildren: () =>
+          import('./country/country.module').then((m) => m.CountryModule),
+      },
+    ]),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

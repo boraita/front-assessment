@@ -5,8 +5,8 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Country } from '../models/country';
+import { Subscription, Observable } from 'rxjs';
+import { Country } from '../../models/country';
 import { CountryService } from '../services/country.service';
 
 @Component({
@@ -14,22 +14,15 @@ import { CountryService } from '../services/country.service';
   templateUrl: './country-list.component.html',
   styleUrls: ['./country-list.component.css'],
 })
-export class CountryListComponent implements OnInit, OnDestroy {
+export class CountryListComponent implements OnInit {
   @Output() countrySelected = new EventEmitter<Country>();
-  countryList: Country[] = [];
-  subscriptions!: Subscription;
+  countryList$!: Observable<Country[]>;
 
   constructor(private readonly countryService: CountryService) {}
 
   ngOnInit(): void {
-    this.subscriptions = this.countryService
+    this.countryList$ = this.countryService
       .getCountries()
-      .subscribe((contries) => (this.countryList = contries));
-  }
-  ngOnDestroy(): void {
-    if (this.subscriptions) {
-      this.subscriptions.unsubscribe();
-    }
   }
   setCountry(country: Country) {
     this.countrySelected.emit(country);

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { ShowCityComponent } from './show-city.component';
-import { Country } from '../models/country';
+import { Country } from '../../models/country';
 
 describe('ShowCityComponent', () => {
   let component: ShowCityComponent;
