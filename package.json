@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:e2e": "cd e2e && npm run cypress"
+    "test:e2e": "cd e2e && npm run cypress",
+    "test:e2e:local:ci": "cd e2e && npm run cy:local:ci",
+    "test:e2e:ci": "cd e2e && npm run cy:ci"
   },
   "private": true,
   "dependencies": {

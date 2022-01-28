@@ -4,8 +4,10 @@
   "description": "run cypress against anything",
   "scripts": {
     "cypress": "cypress open",
+    "cy:local:ci": "cypress open --env env=ci",
     "cypress-debug": "cypress open --config watchForFileChanges=true",
-    "cy:verify": "cypress verify"
+    "cy:verify": "cypress verify",
+    "cy:ci": "cypress run --env api_server=https://test.2e2.api:8888,env=ci"
   },
   "devDependencies": {
     "cypress": "^9.3.1",
