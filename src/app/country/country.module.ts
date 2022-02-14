@@ -1,24 +1,15 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CountryListComponent } from './country-list/country-list.component';
-import { ShowCityComponent } from './show-city/show-city.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CountryService } from './services/country.service';
+import { NgModule } from '@angular/core';
+import { CountryListComponent } from './country-list/country-list.component';
 import { CountryComponent } from './country.component';
-import { RouterModule } from '@angular/router';
+import { CountryService } from './services/country.service';
+import { ShowCityComponent } from './city/city.component';
 
 @NgModule({
   declarations: [CountryListComponent, ShowCityComponent, CountryComponent],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: CountryComponent,
-      },
-    ]),
-  ],
+  imports: [CommonModule, HttpClientModule],
   providers: [CountryService],
+  exports: [CountryComponent],
 })
 export class CountryModule {}

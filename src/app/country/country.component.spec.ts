@@ -1,9 +1,6 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CountryServiceMock } from '../shared/mocks/country-service.mock';
 import { CountryComponent } from './country.component';
-import { CountryService } from './services/country.service';
-import { CountryListComponent } from './country-list/country-list.component';
-import { ShowCityComponent } from './show-city/show-city.component';
 
 describe('CountryComponent', () => {
   let component: CountryComponent;
@@ -11,8 +8,8 @@ describe('CountryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CountryComponent, CountryListComponent, ShowCityComponent],
-      providers: [{ provide: CountryService, useClass: CountryServiceMock }],
+      declarations: [CountryComponent],
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   });
 

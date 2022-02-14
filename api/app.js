@@ -19,18 +19,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/country', (req, res) => {
-  const countries = countriesCyCapCity.map(countryCap => ({ "country": countryCap.country }));
-  res.send(countries);
-});
-
 app.get('/country/city', (req, res) => {
   res.send(countriesCyCapCity);
-});
-
-app.get('/city', (req, res) => {
-  const cities = countriesCyCapCity.map(countryCap => ({ "city": countryCap.city }));
-  res.send(cities);
 });
 
 app.listen(port, () => {
