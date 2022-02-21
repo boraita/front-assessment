@@ -9,9 +9,11 @@
     "watch": "ng build --watch --configuration development",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:e2e:open": "concurrently \"npm start\" \"cd e2e && npm run cypress\"",
+    "cypress:ci": "cd e2e && npm run cy:ci",
+    "cypress:local": "cd e2e && npm run cy:local",
+    "test:e2e:open": "concurrently \"npm start\" \"npm run cypress:local\"",
     "test:e2e:local": "start-server-and-test start http://localhost:4200 \"cd e2e && npm run cy:local\"",
-    "test:e2e:ci": "start-server-and-test start http://localhost:4200 test:e2e:ci"
+    "test:e2e:ci": "start-server-and-test start http://localhost:4200 cypress:ci"
   },
   "private": true,
   "dependencies": {

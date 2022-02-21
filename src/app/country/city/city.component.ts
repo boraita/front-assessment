@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class ShowCityComponent {
   constructor(private readonly countryService: CountryService) {}
 
-  getCountry(): Observable<Country> {
-    return this.countryService.selectedCountry$;
+  getCountry(): Observable<Country | null> {
+    return this.countryService.getSelectedCountry();
   }
 }

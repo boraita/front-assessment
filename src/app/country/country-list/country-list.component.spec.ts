@@ -1,9 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CountryService } from '../services/country.service';
-import { CountryListComponent } from './country-list.component';
-import { Country } from '../../models/country';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
+import { CountryService } from '../services/country.service';
+import { CountryListComponent } from './country-list.component';
 
 jest.mock('../services/country.service');
 
@@ -23,6 +22,7 @@ describe('CountryListComponent', () => {
     fixture = TestBed.createComponent(CountryListComponent);
     component = fixture.componentInstance;
     countryService = TestBed.inject(CountryService);
+    jest.spyOn(countryService, 'getCountries').mockReturnValue(of([{ country: 'Afghanistan', city: 'Kabul' }]));
     fixture.detectChanges();
   });
 
@@ -37,12 +37,6 @@ describe('CountryListComponent', () => {
 
   it('should select a country and use set contry service', () => {
     const setCountryServiceSpy = jest.spyOn(countryService, 'setCountry');
-    component.countryList$ = of([
-      {
-        country: 'Afghanistan',
-        city: 'Kabul',
-      },
-    ]);
     fixture.detectChanges();
     const countryBtns = fixture.debugElement.query(
       By.css('a.btn')

@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CountryService } from '../services/country.service';
-import { ShowCityComponent } from './city.component';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
 import { Country } from '../../models/country';
+import { CountryService } from '../services/country.service';
+import { ShowCityComponent } from './city.component';
 
 jest.mock('./../services/country.service');
 
@@ -38,10 +38,9 @@ describe('ShowCityComponent', () => {
   });
 
   it('should be shown capital Unknown', () => {
-    countryService.selectedCountry$ = of({
-      country: 'Afghanistan',
-      city: null,
-    } as Country);
+    jest
+      .spyOn(countryService, 'getSelectedCountry')
+      .mockReturnValue(of({ country: 'Afghanistan', city: null }));
     fixture.detectChanges();
     const divSelectedCountry = fixture.debugElement.query(By.css('.city-name'));
     expect(divSelectedCountry.nativeElement.textContent.trim()).toBe(
@@ -50,10 +49,12 @@ describe('ShowCityComponent', () => {
   });
 
   it('should be shown capital from country selected', () => {
-    countryService.selectedCountry$ = of({
-      country: 'Spain',
-      city: 'Madrid',
-    } as Country);
+    jest.spyOn(countryService, 'getSelectedCountry').mockReturnValue(
+      of({
+        country: 'Spain',
+        city: 'Madrid',
+      } as Country)
+    );
     fixture.detectChanges();
     const divSelectedCountry = fixture.debugElement.query(By.css('.city-name'));
     expect(divSelectedCountry.nativeElement.textContent.trim()).toBe(
@@ -66,10 +67,12 @@ describe('ShowCityComponent', () => {
   });
 
   it('should display a capital from input country value (Snapshot)', () => {
-    countryService.selectedCountry$ = of({
-      country: 'Spain',
-      city: 'Madrid',
-    } as Country);
+    jest.spyOn(countryService, 'getSelectedCountry').mockReturnValue(
+      of({
+        country: 'Spain',
+        city: 'Madrid',
+      } as Country)
+    );
     fixture.detectChanges();
     expect(fixture).toMatchSnapshot();
   });
