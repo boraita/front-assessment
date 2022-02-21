@@ -21,68 +21,7 @@ exports[`ShowCityComponent should display Select a country (Snapshot) 1`] = `
 </app-city>
 `;
 
-exports[`ShowCityComponent should display Select a country 1`] = `
-<app-city
-  __ngContext__={[Function LRootView]}
-  countryService={[Function CountryService]}
->
-  <div
-    class="container"
-  >
-    <div
-      class="capital-container"
-    >
-      <div
-        class="select-country"
-      >
-         Select a country 
-      </div>
-    </div>
-  </div>
-</app-city>
-`;
-
 exports[`ShowCityComponent should display a capital from input country value (Snapshot) 1`] = `
-<app-city
-  __ngContext__={[Function LRootView]}
-  countryService={[Function CountryService]}
->
-  <div
-    class="container"
-  >
-    <div
-      class="capital-container"
-    >
-      <div
-        class="capital-selected"
-      >
-        <div
-          class="country-name"
-        >
-          <span>
-             Country 
-          </span>
-          <span>
-            Spain
-          </span>
-        </div>
-        <div
-          class="city-name"
-        >
-          <span>
-             Capital 
-          </span>
-          <span>
-             Madrid 
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</app-city>
-`;
-
-exports[`ShowCityComponent should display a capital from input country value 1`] = `
 <app-city
   __ngContext__={[Function LRootView]}
   countryService={[Function CountryService]}
