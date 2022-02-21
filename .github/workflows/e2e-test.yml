@@ -17,4 +17,4 @@ jobs:
       - name: Install Cypress packages
         run: cd e2e && npm ci
       - name: Lunch E2E test
-        run: npm run test:e2e:ci
+        run: npm run test:integration:ci

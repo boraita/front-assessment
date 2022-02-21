@@ -10,10 +10,10 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "cypress:ci": "cd e2e && npm run cy:ci",
-    "cypress:local": "cd e2e && npm run cy:local",
-    "test:e2e:open": "concurrently \"npm start\" \"npm run cypress:local\"",
-    "test:e2e:local": "start-server-and-test start http://localhost:4200 \"cd e2e && npm run cy:local\"",
-    "test:e2e:ci": "start-server-and-test start http://localhost:4200 cypress:ci"
+    "cypress:run": "cd e2e && npm run cy:run",
+    "test:e2e:open": "concurrently \"npm start\" \"npm run cypress\"",
+    "test:e2e:local": "start-server-and-test start http://localhost:4200 cypress:run",
+    "test:integration:ci": "start-server-and-test \"ng s\" http://localhost:4200 cypress:run"
   },
   "private": true,
   "dependencies": {

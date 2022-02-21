@@ -5,7 +5,7 @@
   "scripts": {
     "prestart": "npm install",
     "cypress": "cypress open",
-    "cy:local": "cypress run --env env=ci",
+    "cy:run": "cypress run",
     "cypress-debug": "cypress open --config watchForFileChanges=true",
     "cy:verify": "cypress verify",
     "cy:ci": "cypress run --env api_server=http://localhost:3000,env=ci"
