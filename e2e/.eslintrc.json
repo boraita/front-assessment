@@ -1,0 +1,20 @@
+{
+  "plugins": ["cypress"],
+  "extends": ["plugin:cypress/recommended"],
+  "rules": {
+    "import/no-unresolved": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js"]
+      }
+    }
+  },
+  "env": {
+    "cypress/globals": true
+  },
+  "compilerOptions": {
+    "types": ["cypress"]
+  }
+}

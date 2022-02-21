@@ -1,0 +1,33 @@
+.list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border: 3px solid black;
+  border-radius: 5px;
+  background: white;
+  margin-bottom: 5px;
+}
+.list-item > div {
+  width: 100%;
+  font-weight: bold;
+}
+.list-item:nth-child(odd) {
+  background-color: #033e8c;
+  color: #f2b705;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px;
+  font-weight: bold;
+  font-size: large;
+  background-color: #f2b705;
+  margin-bottom: 5px;
+}
+a.btn {
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "front-assessment-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "nodemon app.js",
+    "start:prod": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

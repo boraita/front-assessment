@@ -1,0 +1,14 @@
+{
+  "defaultCommandTimeout": 10000,
+  "requestTimeout": 10000,
+  "numTestsKeptInMemory": 50,
+  "viewportWidth": 1280,
+  "viewportHeight": 1024,
+  "fileServerFolder": ".",
+  "fixturesFolder": "./src/fixtures",
+  "integrationFolder": "./src/integration",
+  "video": false,
+  "videoUploadOnPasses": false,
+  "chromeWebSecurity": false,
+  "baseUrl": "http://localhost:4200"
+}

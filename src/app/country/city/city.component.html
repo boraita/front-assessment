@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="capital-container">
+    <div
+      class="select-country"
+      *ngIf="(getCountry() | async) == null; else capital"
+    >
+      Select a country
+    </div>
+    <ng-template #capital>
+      <div class="capital-selected">
+        <div class="country-name">
+          <span> Country </span>
+          <span>{{ (getCountry() | async)?.country }}</span>
+        </div>
+        <div class="city-name">
+          <span> Capital </span>
+          <span> {{ (getCountry() | async)?.city || "Unknown" }} </span>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>
